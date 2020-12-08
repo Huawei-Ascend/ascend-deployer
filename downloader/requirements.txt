@@ -27,7 +27,7 @@ tensorflow==1.15.0
 cython==0.29.21
 cffi==1.14.0
 markupsafe==1.1.1
-cryptography==3.1.1
+cryptography==3.2
 jinja2==2.11.2
 ansible-base==2.10.2
 ansible==2.10.1
