@@ -1,8 +1,8 @@
-# 离线安装工具说明
+# 离线安�工具�明
 
-离线安装工具提供系统依赖、python依赖自动下载工具的和一键式安装所有依赖的脚本
+离线安�工具提供系统依赖�python依赖�动下载工具的和一�式安装所有依赖的脚本
 
-目前离线安装工具支持如下操作系统
+�前�线安�工具支持�下操作系统
 
 |操作系统 |版本|cpu架构    |
 |-------|-----|---------|
@@ -13,17 +13,17 @@
 |ubuntu |18.04|aarch64  |
 |ubuntu |18.04|x86_64   |
 
-# 离线安装工具操作指导
+# 离线安�工具操作指�
 
-## 单机安装
+## 单机安�
 
-- **步骤 1**
+- **步� 1**
 
-启动start_download.bat或者start_download.sh下载依赖软件
+�动start_download.bat或�start_download.sh下载依赖��
 
-- **步骤 2**
+- **步� 2**
 
-将CANN软件包软件包放到resources目录下
+将CANN�件包�件包放到resources�录下
 
 ```
 atlas-deployer
@@ -44,35 +44,35 @@ atlas-deployer
    `- Ascend-cann-toolkit-xxx.run
 ```
 
-- **步骤 3**
+- **步� 3**
 
-使用filezilla等工具，将整个目录上从到待安装设备上
+使用filezilla等工具，将整��录上从到待安装��上
 
-- **步骤 4**
-执行install.sh --help仔细阅读参数说明
+- **步� 4**
+执�install.sh --help仔细阅�参数�明
 ```bash
 ./install.sh --help
 ```
 
-- **步骤 5**
+- **步� 5**
 
-运行install.sh安装组件或按场景安装,例如：
+运�install.sh安�组件或按场�安�,例�：
 
 ```bash
-./install.sh --install=driver      // 安装driver
-./install.sh --install=npu         // 安装driver和firmware
-./install.sh --install-scene=auto  // 自动安装所有能找到的软件包
+./install.sh --install=driver      // 安�driver
+./install.sh --install=npu         // 安�driver和firmware
+./install.sh --install-scene=auto  // �动安装所有能找到的软件包
 ```
 
-## 批量安装
+## 批量安�
 
-在单机安装执行安装之前配置inventor_file文件指定待安装设备。下载和上传之服务器的过程与单机相同。
+在单机安装执行安装之前配置inventor_file文件指定待安装���下载和上传之服务器的过程与单机相同�
 
-- **步骤 1**
+- **步� 1**
 
-在文件inventory_file配置待安装的其他设备的ip地址、用户名和密码,可配多个。
+在文件inventory_file配置待安装的其他设�的ip地址、用户名和密�,�配�个�
 
-例如：
+例�：
 ```buildoutcfg
 [ascend]
 ip_address_1 ansible_ssh_user='root' ansible_ssh_pass='password1'
@@ -81,9 +81,9 @@ ip_address_3 ansible_ssh_user='root' ansible_ssh_pass='password3'
 
 ```
 
-- **步骤 2**
+- **步� 2**
 
-执行ansible ping测试其他设备连通性
+执�ansible ping测试其他设�连通�
 ```bash
 export PATH=/usr/local/python3.7.5/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/python3.7.5/lib:$LD_LIBRARY_PATH
@@ -93,35 +93,35 @@ ip_address_1 | SUCCESS => {
     "ping": "pong"
 }
 ```
-如果之前没有安装过ansible可以执行./install.sh --check
+如果之前没有安�过ansible�以执�./install.sh --check
 ```bash
 ./install.sh --check
 ```
-如果所有设备都success，表示所有设备都能正常连接。如有设备失败，请检查该设备的网络连接和sshd服务是否开启
+如果�有��都success，表示所有��都能�常连接。�有设�失败，请�查���的网络连接和sshd服务�否开�
 
-- **步骤 4**
-执行install.sh --help仔细阅读参数说明
+- **步� 4**
+执�install.sh --help仔细阅�参数�明
 ```bash
 ./install.sh --help
 ```
 
-- **步骤 5**
+- **步� 5**
 
-执行install.sh启动批量安装。过程与单机安装基本相同，例如：
+执�install.sh�动批量安装�过程与单机安�基�相同，例如：
 ```bash
-./install.sh --install=driver      // 安装driver
-./install.sh --install=npu         // 安装driver和firmware
-./install.sh --install-scene=auto  // 自动安装所有能找到的软件包
+./install.sh --install=driver      // 安�driver
+./install.sh --install=npu         // 安�driver和firmware
+./install.sh --install-scene=auto  // �动安装所有能找到的软件包
 ```
 
-# 离线安装工具详细说明
+# 离线安�工具�细说明
 ### 下载工具使用
 
-windows下需安装python3，推荐使用python3.7版本以上
+windows下需安�python3，推荐使用python3.7版本以上
 
-windows版本下载路径[python3.7.5](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe)
+windows版本下载�径[python3.7.5](https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64.exe)
 
-工具目录结构如下
+工具�录结构�下
 ```
 |-- downloader
 |-- playbooks
@@ -131,7 +131,7 @@ windows版本下载路径[python3.7.5](https://www.python.org/ftp/python/3.7.5/p
 |-- resources
 |-- ansble.cfg
 ```
-在windows下运行start_download.bat启动下载，在linux下运行start_download.sh启动下载
+在windows下运行start_download.bat�动下载，在linux下运行start_download.sh�动下�
 
 ### 下载工具配置
 
@@ -142,25 +142,25 @@ downloader/config/{os}_{version}_{arch}/source.list
 downloader/config/{os}_{version}_{arch}/source.repo
 ```
 
-- **Python源配置**
+- **Python源配�**
 
-python源配置在downloader/config.ini中，默认使用华为源，可根据需要替换
+python源配�在downloader/config.ini�，默认使用华为源，可根据�要替�
 ```buildoutcfg
 [pypi]
 index_url=http://mirrors.huaweicloud.com/pypi/simple
 ```
 
-- **Centos源配置**
+- **Centos源配�**
 
-centos源在对于版本的配置目录中
+centos源在对于版本的配��录中
 ```
 downloader/config/centos_{version}_{arch}/source.repo
 ```
-例如centos 7.6  aarch64第一的源配置在如下文件中 
+例�centos 7.6  aarch64��的源配置在�下文件� 
 ```
 downloader/config/centos_7.6_aarch64/source.repo
 ```
-centos 7.6的源配置文件内容如下:
+centos 7.6的源配置文件内��下:
 ```
 [base]
 baseurl=http://mirrors.huaweicloud.com/centos-altarch/7/os/aarch64
@@ -168,12 +168,12 @@ baseurl=http://mirrors.huaweicloud.com/centos-altarch/7/os/aarch64
 [epel]
 baseurl=http://mirrors.huaweicloud.com/epel/7/aarch64
 ```
-表示同时启用了base源和epel源，下载centos的依赖是会从这两个源中查询和下载。默认使用华为源，根据需要修改。
-修改源通常只需要修改其中host部分，即mirrors.huaweicloud.com部分。如需修改后面部分，请确保理解centos的源配置
+表示同时�用了base源和epel源，下载centos的依赖是会从这两�源中查�和下载。默认使用华为源，根��要修改�
+�改源通常��要修改其中host部分，即mirrors.huaweicloud.com部分。�需�改后面部分，请确保理�centos的源配置
 
-_注意:_ centos的依赖软件需要在base和epel一起才能包含完整。如果需删除源，可能造成依赖下载不完整。
+_注意:_ centos的依赖软件需要在base和epel�起才能包�完整。�果�删除源，�能�成依赖下载不完整�
 
-centos 8.2的源结构与7.2差异较大,例如CentOS 8.2 aarch64下源配置为：
+centos 8.2的源结构�7.2�异较�,例�CentOS 8.2 aarch64下源配置为：
 ```buildoutcfg
 [base]
 baseurl=http://mirrors.huaweicloud.com/centos/8/BaseOS/aarch64/os
@@ -187,24 +187,24 @@ baseurl=http://mirrors.huaweicloud.com/centos/8/AppStream/aarch64/os/
 [Everything]
 baseurl=http://mirrors.huaweicloud.com/epel/8/Everything/aarch64
 ```
-包含4个子源。 修改规则与centos7.6相同
+包含4�子源� �改�则与centos7.6相同
 
 
-- **Ubuntu源配置**
+- **Ubuntu源配�**
 
-已ubuntu 18.04 aarch64为例子，源配置文件为：
+已ubuntu 18.04 aarch64为例子，源配�文件为：
 ```buildoutcfg
 config/ubuntu_18.04_aarch64/source.list
 ```
-内容如下：
+内��下�
 ```buildoutcfg
 deb http://mirrors.huaweicoud.com/ubuntu-ports/ bionic main multiverse restricted universe
 deb http://mirrors.huaweicloud.com/ubuntu-ports/ bionic-updates main multiverse restricted universe
 deb http://mirrors.huaweicloud.com/ubuntu-ports/ bionic-security main multiverse restricted universe
 ```
-配置文件格式和ubuntu的/etc/apt.d/source.list基本相同。默认使用华为源，可根据实际情况修改。
+配置文件格式和ubuntu�/etc/apt.d/source.list基本相同。默认使用华为源，可根据实际情况�改�
 
-_注意_: 修改源时通常只建议修改url。 增加或删除源可能找出依赖下载失败或依赖版本不匹配。
+_注意_: �改源时�常�建��改url� 增加或删除源�能找出依赖下载失败或依赖版本不匹配�
 
 ### downloader介绍
 1.downloader下载保存的目录结构：  
@@ -222,25 +222,25 @@ resources/
 
 2.下载OS系统依赖组件  
 ```shell script
-# 清理下载文件及目录
+# 清理下载文件及目�
 python os_dep_downloader.py clean
-# 执行下载
+# 执�下�
 python os_dep_downloader.py
 ```
 
 3.代理配置  
 ```editorconfig
 [proxy]
-enable=true         # 是否开启代理配置参数
+enable=true         # �否开�代理配置参数
 protocol=http
 hostname=openproxy.huawei.com
 port=8080
 username=none       # 代理账号
 userpassword=none   # 代理密码
 ```
-### Driver,Frimware和CANN层软件安装
+### Driver,Frimware和CANN层软件安�
 
-Driver,Firmware,CANN层软件需要使用run包。 将相关软件包放置在resources目录下即可，例如：
+Driver,Firmware,CANN层软件需要使用run包� 将相关软件包放置在resources�录下即可，例如：
 ```
 atlas-deployer
 |- install.sh
@@ -262,8 +262,8 @@ atlas-deployer
 
 # 安全注意事项
 
-1. 由于需要使用dpkg， rpm等包管理器，只能使用root账号运行
+1. 由于�要使用dpkg� rpm等包管理�，只能使用root账号运�
 
-2. inventory文件中会配置远程机器的root用户名和密码，建议使用ansible的vault机制进行加密，使用完成之后建议立即删除
+2. inventory文件�会配�远程机器的root用户名和密码，建�使用ansible的vault机制进�加密，使用完成之后建�立即删除
    
-   参考文档[http://www.ansible.com.cn/docs/playbooks_vault.html](http://www.ansible.com.cn/docs/playbooks_vault.html)
+   参�文�[http://www.ansible.com.cn/docs/playbooks_vault.html](http://www.ansible.com.cn/docs/playbooks_vault.html)

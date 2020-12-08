@@ -30,7 +30,7 @@ class Yum():
     def __init__(self, source_file, arch):
         self.arch = arch
         self.cache = {}
-        """读取源配置"""
+        """读取源配�"""
         script = os.path.realpath(__file__)
         self.base_dir = os.path.dirname(os.path.dirname(script))
         self.repo_file = os.path.join(self.base_dir, source_file)
@@ -59,17 +59,17 @@ class Yum():
                 """下载repomd.xml文件"""
                 self.download_file(repomd_url, repomd_file)
 
-            """解析repomod.xml文件，得到数据库文件的url"""
+            """解析repomod.xml文件，得到数�库文件的url"""
             db_url = url + '/' + self.parse_repomd(repomd_file)
             url_file_name = os.path.basename(db_url).split('-')[1];
             compressed_file = os.path.join(self.cache_dir,
                                            name + '_' + url_file_name)
             print('dburl=[{0}]'.format(db_url))
 
-            """下载数据库文件"""
+            """下载数据库文�"""
             self.download_file(db_url, compressed_file)
 
-            """解压数据库文件"""
+            """解压数据库文�"""
             self.uncompress_file(compressed_file, db_file)
 
     def uncompress_file(self, compress_file, dst_file):
@@ -112,7 +112,7 @@ class Yum():
 
     def get_url_by_pkg_name(self, pkg_name):
         """
-        在数据库中查询包名对应的url
+        在数�库中查�包名�应的url
         """
         for name, url in self.sources.items():
             db_file = os.path.join(self.cache_dir, name + '_primary.sqlite')

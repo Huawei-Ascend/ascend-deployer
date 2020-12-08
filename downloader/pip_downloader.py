@@ -105,7 +105,7 @@ class MyPip():
 
     def download_wheel(self, name, platform, implement, dest_path):
         """
-        下载软件包
+        下载�件包
         """
         distribution, version = name.split('==')
         index = self.get_simple_index(distribution)
@@ -121,7 +121,7 @@ class MyPip():
 
     def download_source(self, name, dest_path):
         """
-        下载源码包
+        下载源码�
         """
         distribution, version = name.split('==')
         index = self.get_simple_index(distribution)

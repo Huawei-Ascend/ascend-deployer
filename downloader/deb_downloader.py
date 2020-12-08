@@ -22,11 +22,11 @@ import gzip
 from download_util import DOWNLOAD_INST
 
 """
-ubuntu的子仓
-main:完全的自由软件。
-restricted:不完全的自由软件。
-universe:ubuntu官方不提供支持与补丁，全靠社区支持。
-muitiverse：非自由软件，完全不提供支持和补丁。
+ubuntu的子�
+main:完全的自由软件�
+restricted:不完全的�由软件�
+universe:ubuntu官方不提供支持与补丁，全靠社区支持�
+muitiverse：非�由软件，完全不提供支持和补丁�
 """
 
 
@@ -46,7 +46,7 @@ class Apt():
     def __init__(self, source_file, arch):
         self.arch = arch
         self.cache = {}
-        """读取源配置"""
+        """读取源配�"""
         self.source = {}
         self.source_list = []
         self.mirror_url = None
