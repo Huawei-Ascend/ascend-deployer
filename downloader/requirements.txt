@@ -21,7 +21,7 @@ numpy==1.19.2
 protobuf==3.13.0
 setuptools==50.3.2
 werkzeug==1.0.1
-wheel==0.35.1
+wheel==0.38.1
 termcolor==1.1.0
 tensorflow==1.15.0
 cython==0.29.21
